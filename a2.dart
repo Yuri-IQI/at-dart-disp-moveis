@@ -1,7 +1,23 @@
+import 'dart:io';
 import 'dart:math';
 
 void main() {
+  stdout.write('Informe o tamanho da sequência: ');
+  String? input = stdin.readLineSync();
+  int? length = input != null ? int.tryParse(input) : null;
 
+  double res = 0;
+  for (int i = 1; i <= length!; i++) {
+    double fraction = buildFraction(i);
+
+    if (i <= 3 || i % 2 != 0) {
+      res += fraction;
+    } else {
+      res -= fraction;
+    }
+  }
+  
+  print('Resultado: $res');
 }
 
 double buildFraction(int length) {
@@ -25,9 +41,13 @@ int getDenominator(int base, int length) {
 }
 
 int solveFatorial(int n) {
+  if (n < 0) {
+    throw ArgumentError('Número negativo não é permitido para fatorial.');
+  }
+
   int res = 1;
   for (int i = 2; i <= n; i++) {
-    res *= 1;
+    res *= i;
   }
 
   return res;

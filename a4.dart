@@ -2,7 +2,6 @@ import 'dart:io';
 
 void main() {
   String FLAG = '00000';
-  String? matricula = '';
   List<Aluno> alunos = [];
 
   while (true) {

@@ -5,7 +5,7 @@ void main() {
   while (true) {
     print('Informe o tamanho da sequência:');
     String? input = stdin.readLineSync();
-    if (input == null) {
+    if (input == null || input == '') {
       break;
     }
 

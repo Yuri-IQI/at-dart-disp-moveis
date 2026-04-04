@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'a20.dart';
 
 void main() {
   List<List<String>> tabuleiro = [
@@ -14,6 +15,7 @@ void gameLoop(List<List<String>> tabuleiro) {
   String jogadorAtual = 'X';
 
   while (true) {
+    limparTerminal();
     imprimirTabuleiro(tabuleiro);
 
     print('\n($jogadorAtual) Digite linha e coluna (ex: 0,1) ou "sair":');

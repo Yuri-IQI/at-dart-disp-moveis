@@ -22,7 +22,7 @@ void main() {
   while (true) {
     imprimirMapa(mapa, pos[0], pos[1]);
 
-    print('\nUse W A S D para mover (ou 0 para sair):');
+    print('\nUse WASD para mover (ou 0 para sair):');
     String? movimento = stdin.readLineSync();
 
     if (movimento == '0') break;
@@ -33,8 +33,6 @@ void main() {
       print('Você chegou ao objetivo!');
       break;
     }
-
-    print('\x1B[2J\x1B[0;0H');
   }
 }
 
@@ -81,4 +79,8 @@ bool update(List<List<String>> mapa, String? movimento, List<int> pos) {
   }
 
   return false;
+}
+
+limparTerminal() {
+  print('\x1B[2J\x1B[0;0H');
 }
